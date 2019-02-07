@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {QuestionsPage} from "../questions/questions";
 
 /**
- * Generated class for the ParticipantsPage page.
+ * Generated class for the QuestionsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,18 +10,20 @@ import {QuestionsPage} from "../questions/questions";
 
 @IonicPage()
 @Component({
-  selector: 'page-participants',
-  templateUrl: 'participants.html',
+  selector: 'page-questions',
+  templateUrl: 'questions.html',
 })
-export class ParticipantsPage {
+export class QuestionsPage {
+
+  questnumber:number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+
   }
 
-  store(){
-      this.navCtrl.push(QuestionsPage);
+  ionViewDidLoad() {
+    console.log(this.questnumber);
   }
-
-
 
 }
