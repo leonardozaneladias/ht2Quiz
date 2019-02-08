@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import {ParticipantsPage} from "../pages/participants/participants";
+import {DatabaseProvider} from "../providers/database/database";
 
 @Component({
   templateUrl: 'app.html'
@@ -17,8 +18,8 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, dbProvider: DatabaseProvider) {
+    this.initializeApp(dbProvider);
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -26,14 +27,28 @@ export class MyApp {
       { title: 'List', component: ListPage }
     ];
 
+
+
   }
 
-  initializeApp() {
+  initializeApp(dbProvider: DatabaseProvider) {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
-      this.splashScreen.hide();
+
+      //Criando o banco de dados
+      dbProvider.createDatabase()
+          .then(() => {
+            // fechando a SplashScreen somente quando o banco for criado
+            this.splashScreen.hide();
+          })
+          .catch(() => {
+            // ou se houver erro na criação do banco
+            this.splashScreen.hide();
+          });
+
+
     });
   }
 

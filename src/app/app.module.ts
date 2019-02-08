@@ -10,6 +10,8 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {ParticipantsPage} from "../pages/participants/participants";
 import {QuestionsPage} from "../pages/questions/questions";
+import {SQLite} from "@ionic-native/sqlite";
+import {DatabaseProvider} from '../providers/database/database';
 
 @NgModule({
     declarations: [
@@ -34,7 +36,9 @@ import {QuestionsPage} from "../pages/questions/questions";
     providers: [
         StatusBar,
         SplashScreen,
-        {provide: ErrorHandler, useClass: IonicErrorHandler}
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
+        SQLite,
+        DatabaseProvider,
     ]
 })
 export class AppModule {
