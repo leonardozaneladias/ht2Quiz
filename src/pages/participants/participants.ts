@@ -19,9 +19,9 @@ import {ParticipantsProvider} from "../../providers/participants/participants";
 })
 export class ParticipantsPage {
 
-    name = 'aaa';
-    email = 'aaa';
-    phone = 'aaa';
+    name = '';
+    email = '';
+    phone = '';
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private db: DatabaseProvider, public participantsProvider: ParticipantsProvider) {
     }

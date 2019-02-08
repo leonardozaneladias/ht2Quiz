@@ -11,10 +11,13 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {ParticipantsPage} from "../pages/participants/participants";
 import {QuestionsPage} from "../pages/questions/questions";
 import {SQLite} from "@ionic-native/sqlite";
+
 import {DatabaseProvider} from '../providers/database/database';
-import { QuestionsProvider } from '../providers/questions/questions';
-import { ParticipantsProvider } from '../providers/participants/participants';
+import {QuestionsProvider} from '../providers/questions/questions';
+import {ParticipantsProvider} from '../providers/participants/participants';
 import {FinalPage} from "../pages/final/final";
+import {NativeAudio} from "@ionic-native/native-audio";
+
 
 @NgModule({
     declarations: [
@@ -44,8 +47,10 @@ import {FinalPage} from "../pages/final/final";
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         SQLite,
         DatabaseProvider,
-    QuestionsProvider,
-    ParticipantsProvider,
+        QuestionsProvider,
+        ParticipantsProvider,
+        NativeAudio
+
     ]
 })
 export class AppModule {

@@ -5,6 +5,7 @@ import {SQLiteObject} from "@ionic-native/sqlite";
 import {QuestionsProvider} from "../../providers/questions/questions";
 import {ParticipantsProvider} from "../../providers/participants/participants";
 import {FinalPage} from "../final/final";
+import {NativeAudio} from "@ionic-native/native-audio";
 
 /**
  * Generated class for the QuestionsPage page.
@@ -38,9 +39,10 @@ export class QuestionsPage {
   history:Array<number>=[];
   order: Array<{section: number,difficulty: number}> = [{section: 1, difficulty: 5},{section: 1, difficulty: 10},{section: 2, difficulty: 5},{section: 2, difficulty: 10},{section: 3, difficulty: 5},{section: 3, difficulty: 10},{section: 4, difficulty: 5},{section: 4, difficulty: 10},{section: 5, difficulty: 5},{section: 5, difficulty: 10}];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private db: DatabaseProvider, public questionsProvider: QuestionsProvider, public participantsProvider: ParticipantsProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private db: DatabaseProvider, public questionsProvider: QuestionsProvider, public participantsProvider: ParticipantsProvider, private nativeAudio: NativeAudio) {
 
-
+      this.nativeAudio.preloadSimple('sonic', 'assets/audios/sonic.mp3')
+      this.nativeAudio.preloadSimple('buzz', 'assets/audios/buzz.mp3')
   }
 
   ionViewDidLoad() {
@@ -84,6 +86,10 @@ export class QuestionsPage {
                   this.style_resp_d = 'green';
                   break;
           }
+
+
+          this.nativeAudio.play('sonic').then(()=>console.log('Audio Play'));
+
       }else {
 
           switch (resp) {
@@ -116,6 +122,8 @@ export class QuestionsPage {
                   break;
           }
 
+          this.nativeAudio.play('buzz')
+
 
 
       }
@@ -124,7 +132,7 @@ export class QuestionsPage {
 
       setTimeout(function () {
           context.reserQuestionNest();
-      }, 3000);
+      }, 2200);
 
 
   }

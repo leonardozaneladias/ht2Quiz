@@ -11,10 +11,9 @@
 </ion-header>
 
 <ion-content padding class="myview">
-  <h3 text-center style="color: #000; font-size: 70px;">Seus Pontos:</h3>
-  <h3 text-center style="color: #000; font-size: 120px;">{{participantsProvider.ranking}}</h3>
 
-  <img ion-img src="assets/imgs/bloco_vou_de_taxi.jpg" style="width: 780px; margin: 0 auto;">
+  <h3 text-center style="color: #000; font-size: 50px; margin-top: 420px;" *ngIf="winner" >Você acertou {{participantsProvider.ranking}} de 10 perguntas</h3>
+  <h3 text-center style="color: #000; font-size: 30px; margin-top: 360px;" *ngIf="!winner"><span style="font-size: 74px; color: #ED257D; font-weight: bold;">Parabéns!</span><br>Você acertou acertou 100% e irá curtir com um amigo(o) um dia de Carnaval em cima do Bloco Vou de Taxi com um Cooler cheinho de Skol!</h3>
 
-  <button ion-button full (click)="reset()" style="padding: 50px; font-size: 50px; margin-top: 30px;">Reiniciar QUIZ</button>
+  <button ion-button full (click)="reset()" style="padding: 50px; font-size: 50px; margin-top: 30px; background: #ED257D; border-radius: 15px;">Reiniciar QUIZ</button>
 </ion-content>

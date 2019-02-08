@@ -17,7 +17,14 @@ import {HomePage} from "../home/home";
 })
 export class FinalPage {
 
+  winner = false;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public participantsProvider: ParticipantsProvider) {
+
+    if(participantsProvider.ranking == 10){
+      this.winner = true;
+    }
+
   }
 
   ionViewDidLoad() {

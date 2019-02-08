@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import {ParticipantsPage} from "../pages/participants/participants";
 import {DatabaseProvider} from "../providers/database/database";
+import {FinalPage} from "../pages/final/final";
 
 @Component({
   templateUrl: 'app.html'
@@ -14,7 +15,7 @@ import {DatabaseProvider} from "../providers/database/database";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = FinalPage;
 
   pages: Array<{title: string, component: any}>;
 
