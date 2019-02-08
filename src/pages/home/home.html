@@ -7,14 +7,16 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="myview">
-  <h3 text-center style="color: #000; font-size: 100px;">BEM VINDO <br> AO QUIZ</h3>
+<ion-content padding>
 
-  <p text-center="">
-    Desafie seu conhecimento sobre XXXX
-  </p>
-  
-  <img ion-img src="assets/imgs/bloco_vou_de_taxi.jpg" style="width: 780px; margin: 0 auto;">
+  <ion-row>
+    <img ion-img src="assets/imgs/bloco_vou_de_taxi.jpg" id="logo_bloco">
+  </ion-row>
 
-  <button ion-button full (click)="startQuiz()" style="padding: 50px; font-size: 50px; margin-top: 30px;">CADASTRAR E INICIAR QUIZ</button>
+  <ion-row id="conteudo">
+    <img ion-img src="assets/imgs/fundo_entrar.jpg" id="fundo_entrar">
+    <button ion-button (click)="startQuiz()" id="btn_cadastrar"><p class="blink">INICIAR</p></button>
+    <div id="titulo">QUIZ</div>
+  </ion-row>
+
 </ion-content>

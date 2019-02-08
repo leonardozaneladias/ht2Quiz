@@ -1,6 +1,68 @@
 page-home {
-  .myview {
+  #content_welcome {
     background-image: url('../assets/imgs/bg1.jpg');
+    background-repeat: no-repeat;
+  }
+
+  #btn_cadastrar {
+    border: 10px #4d4d4d solid;
+    background-color: whitesmoke;
+    color: #2d2d2d;
+    font-family: monospace;
+    padding: 50px;
+    font-size: 50px;
+    position: absolute;
+    border-radius: 20px;
+    width: 300px;
+    left: 27%;
+    top: 81%;
+  }
+
+  #titulo{
+    position: absolute;
     width: 100%;
+    font-size: 200px;
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 5px 5px #E61771;
+  }
+
+
+  .blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+  }
+  @keyframes blink-animation {
+    to {
+      //visibility: hidden;
+      text-shadow: 5px 5px #E61771;
+    }
+  }
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+
+  #fundo_entrar{
+      height: 800px;
+  }
+
+  #entrar{
+    background-image: url('../assets/imgs/fundo_entrar.jpg');
+    background-repeat: no-repeat;
+  }
+
+  #welcome {
+    color: #000000;
+    font-size: 300px;
+    font-family: monospace;
+    font-weight: bolder;
+    text-shadow: 5px 5px #e93a3a;
+  }
+
+  img{
+    width: 100%;
+    position: relative;
   }
 }
