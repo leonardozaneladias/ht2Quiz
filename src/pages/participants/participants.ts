@@ -19,9 +19,9 @@ import {ParticipantsProvider} from "../../providers/participants/participants";
 })
 export class ParticipantsPage {
 
-    name = '';
-    email = '';
-    phone = '';
+    name = 'aaa';
+    email = 'aaa';
+    phone = 'aaa';
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private db: DatabaseProvider, public participantsProvider: ParticipantsProvider) {
     }
@@ -36,7 +36,7 @@ export class ParticipantsPage {
 
         this.db.getDB()
             .then((db: SQLiteObject) => {
-                db.executeSql('INSERT INTO participants (name,email,phone) VALUES (?,?,?)', [this.name, this.email, this.phone])
+                db.executeSql('INSERT INTO participants (name,email,phone,ranking) VALUES (?,?,?,?)', [this.name, this.email, this.phone, 0])
                     .then((data: any) => {
                         db.executeSql('SELECT id FROM participants WHERE name = ? AND email = ?', [this.name, this.email])
                             .then((data: any) => {

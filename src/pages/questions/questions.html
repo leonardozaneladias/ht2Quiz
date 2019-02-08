@@ -12,42 +12,38 @@
 
 <ion-content padding class="myview">
 
-  <ion-grid>
+  <ion-grid style="padding: 30px; margin-top: 100px;">
     <ion-row>
-      <ion-col col-12 style="background: #003ef9; font-size: 28px; padding: 10px" text-center>TEMA:  {{sections[(questions.section-1)]}}</ion-col>
+      <ion-col col-12 style="color: #ED257D ;font-size: 32px; padding: 10px" text-center>SOBRE {{sections[(questions.section-1)]}}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col col-12 style=" background: #2ec95c; font-size: 28px; padding: 15px">{{(questnumber+1)}}) {{questions.question}}</ion-col>
+      <ion-col col-12 style="border-top: 2px solid #8c8c8c; color: black; font-size: 32px; padding: 15px">{{(questnumber+1)}}) {{questions.question}}</ion-col>
     </ion-row>
   </ion-grid>
 
-  <ion-card>
-    <ion-card-content (click)="respost('A')" style="font-size: 18px;">
+  <ion-card class="ion-custom">
+    <ion-card-content [style.background-color]="style_resp_a" (click)="respost('A')" style="font-size: 18px;">
           A) {{answer_a}}
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
-    <ion-card-content (click)="respost('B')" style="font-size: 18px;">
+  <ion-card class="ion-custom">
+    <ion-card-content [style.background-color]="style_resp_b" (click)="respost('B')" style="font-size: 18px;">
       B) {{answer_b}}
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
-    <ion-card-content (click)="respost('C')" style="font-size: 18px;">
+  <ion-card class="ion-custom">
+    <ion-card-content [style.background-color]="style_resp_c" (click)="respost('C')" style="font-size: 18px;">
       C) {{answer_c}}
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
-    <ion-card-content (click)="respost('D')" style="font-size: 18px;">
+  <ion-card class="ion-custom">
+    <ion-card-content [style.background-color]="style_resp_d" (click)="respost('D')" style="font-size: 18px;">
       D) {{answer_d}}
     </ion-card-content>
   </ion-card>
-
-  <p *ngFor="let h of history">{{h}}</p>
-
-  <p>Points: {{points}}</p>
 
 
 
