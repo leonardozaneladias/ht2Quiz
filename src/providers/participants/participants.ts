@@ -1,0 +1,23 @@
+
+import { Injectable } from '@angular/core';
+
+/*
+  Generated class for the ParticipantsProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+@Injectable()
+export class ParticipantsProvider {
+
+  id;
+  name;
+  email;
+  phone;
+  ranking;
+
+  constructor() {
+
+  }
+
+}

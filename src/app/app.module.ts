@@ -12,6 +12,9 @@ import {ParticipantsPage} from "../pages/participants/participants";
 import {QuestionsPage} from "../pages/questions/questions";
 import {SQLite} from "@ionic-native/sqlite";
 import {DatabaseProvider} from '../providers/database/database';
+import { QuestionsProvider } from '../providers/questions/questions';
+import { ParticipantsProvider } from '../providers/participants/participants';
+import {FinalPage} from "../pages/final/final";
 
 @NgModule({
     declarations: [
@@ -19,7 +22,8 @@ import {DatabaseProvider} from '../providers/database/database';
         HomePage,
         ListPage,
         ParticipantsPage,
-        QuestionsPage
+        QuestionsPage,
+        FinalPage
     ],
     imports: [
         BrowserModule,
@@ -31,7 +35,8 @@ import {DatabaseProvider} from '../providers/database/database';
         HomePage,
         ListPage,
         ParticipantsPage,
-        QuestionsPage
+        QuestionsPage,
+        FinalPage
     ],
     providers: [
         StatusBar,
@@ -39,6 +44,8 @@ import {DatabaseProvider} from '../providers/database/database';
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         SQLite,
         DatabaseProvider,
+    QuestionsProvider,
+    ParticipantsProvider,
     ]
 })
 export class AppModule {

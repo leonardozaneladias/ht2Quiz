@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Cadastre-se</ion-title>
+    <ion-title>CADASTRE-SE</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -18,22 +18,22 @@
 
     <ion-item>
       <ion-label floating>Nome</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Email</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Telefone</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="phone"></ion-input>
     </ion-item>
 
 
   </ion-list>
 
-  <button ion-button color="primary" outline full (click)="store()">INICIAR QUIZ</button>
+  <button ion-button color="primary" outline full (click)="store()" style="font-size: 50px; height: 60px;">INICIAR QUIZ</button>
 
 </ion-content>

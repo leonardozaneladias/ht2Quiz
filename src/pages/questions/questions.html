@@ -6,26 +6,48 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>questions</ion-title>
+    <ion-title>QUIZ - VOU DE TAXI</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="myview">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 style="background: #003ef9; font-size: 28px; padding: 10px" text-center>TEMA:  {{sections[(questions.section-1)]}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12 style=" background: #2ec95c; font-size: 28px; padding: 15px">{{(questnumber+1)}}) {{questions.question}}</ion-col>
+    </ion-row>
+  </ion-grid>
 
   <ion-card>
-
-    <ion-card-content>
-
-      Em que ano a Cerveja Skol chegou ao Brasil?
-
+    <ion-card-content (click)="respost('A')" style="font-size: 18px;">
+          A) {{answer_a}}
     </ion-card-content>
-
   </ion-card>
 
-  <button ion-button outline full>A) 1967</button>
-  <button ion-button outline full>B) 1958</button>
-  <button ion-button outline full>C) 1969</button>
-  <button ion-button outline full>D) 1973</button>
+  <ion-card>
+    <ion-card-content (click)="respost('B')" style="font-size: 18px;">
+      B) {{answer_b}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content (click)="respost('C')" style="font-size: 18px;">
+      C) {{answer_c}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content (click)="respost('D')" style="font-size: 18px;">
+      D) {{answer_d}}
+    </ion-card-content>
+  </ion-card>
+
+  <p *ngFor="let h of history">{{h}}</p>
+
+  <p>Points: {{points}}</p>
 
 
 
