@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {QuestionsPage} from "../questions/questions";
 import {DatabaseProvider} from "../../providers/database/database";
 import {SQLiteObject} from "@ionic-native/sqlite";
 import {ParticipantsProvider} from "../../providers/participants/participants";
+import {Keyboard} from "@ionic-native/keyboard";
 
 /**
  * Generated class for the ParticipantsPage page.
@@ -19,17 +20,27 @@ import {ParticipantsProvider} from "../../providers/participants/participants";
 })
 export class ParticipantsPage {
 
+    @ViewChild('focusInput') myInput ;
+
     name = '';
     email = '';
     phone = '';
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, private db: DatabaseProvider, public participantsProvider: ParticipantsProvider) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, private db: DatabaseProvider, public participantsProvider: ParticipantsProvider, private keyboard: Keyboard) {
     }
+
+    ionViewDidLoad() {
+        setTimeout(() => {
+            this.keyboard.show();
+            this.myInput.setFocus();
+        },1000); //a least 150ms.
+    }
+
 
     store() {
 
         if (this.name == '' || this.email == '' || this.phone == '') {
-           alert('Preencher tudo!');
+           alert('Todos os campos são obrigatórios');
            return false;
         }
 

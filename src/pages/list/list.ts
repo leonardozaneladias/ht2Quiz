@@ -23,16 +23,18 @@ export class ListPage {
   getRaking() {
     this.db.getDB()
         .then((db: SQLiteObject) => {
-          db.executeSql('SELECT name, ranking FROM participants ORDER BY ranking DESC, name ASC', {})
+          db.executeSql('SELECT name, email, phone, ranking FROM participants ORDER BY ranking DESC, name ASC', {})
               .then((data: any) => {
                   for (var i = 0; i < data.rows.length; i++) {
                       var parts = data.rows.item(i);
                       this.listOne.push(parts);
                   }
+                  console.log(this.listOne)
               })
         })
         .catch((e)=>{
             console.error('erro', e)
         });
+
   }
 }

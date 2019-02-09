@@ -18,8 +18,10 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, dbProvider: DatabaseProvider) {
-    this.initializeApp(dbProvider);
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public dbProvider: DatabaseProvider) {
+    this.initializeApp();
+    //Criando o banco de dados
+    dbProvider.createDatabase();
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -31,22 +33,14 @@ export class MyApp {
 
   }
 
-  initializeApp(dbProvider: DatabaseProvider) {
+  initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
+      this.splashScreen.hide();
 
-      //Criando o banco de dados
-      dbProvider.createDatabase()
-          .then(() => {
-            // fechando a SplashScreen somente quando o banco for criado
-            this.splashScreen.hide();
-          })
-          .catch(() => {
-            // ou se houver erro na criação do banco
-            this.splashScreen.hide();
-          });
+
 
 
     });

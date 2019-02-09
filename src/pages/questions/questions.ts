@@ -62,8 +62,12 @@ export class QuestionsPage {
                   db.executeSql('UPDATE participants SET ranking = ? WHERE id = ?', [this.points, this.participantsProvider.id])
                       .then((data: any) => {
                           this.participantsProvider.ranking = this.points;
-                          this.navCtrl.setRoot(FinalPage);
-                          return true;
+                          var context = this;
+                          setTimeout(function () {
+                              context.navCtrl.setRoot(FinalPage);
+                          }, 2000);
+
+                          return false;
                       })
                       .catch(()=>{})
             })

@@ -9,9 +9,10 @@
 
 <ion-content>
 
-  <ion-grid>
-    <ion-row *ngFor="let l of listOne" style="font-size: 34px; margin: 10px;">
-      <ion-col col-10>{{l.name}}</ion-col>
+  <ion-grid >
+    <ion-row *ngFor="let l of listOne" style="font-size: 18px; margin: 10px; border-bottom: 1px solid #999999">
+      <ion-col col-5>{{l.name}}</ion-col>
+      <ion-col col-5>{{l.email}}<br>{{l.phone}}</ion-col>
       <ion-col col-2>{{l.ranking}}</ion-col>
     </ion-row>
   </ion-grid>

@@ -17,6 +17,7 @@ import {QuestionsProvider} from '../providers/questions/questions';
 import {ParticipantsProvider} from '../providers/participants/participants';
 import {FinalPage} from "../pages/final/final";
 import {NativeAudio} from "@ionic-native/native-audio";
+import {Keyboard} from "@ionic-native/keyboard";
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import {NativeAudio} from "@ionic-native/native-audio";
         DatabaseProvider,
         QuestionsProvider,
         ParticipantsProvider,
-        NativeAudio
+        NativeAudio,
+        Keyboard
 
     ]
 })

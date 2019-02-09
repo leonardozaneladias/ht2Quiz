@@ -37,8 +37,6 @@ export class DatabaseProvider {
     private createTables(db: SQLiteObject) {
         // Criando as tabelas
         db.sqlBatch([
-            ['DROP TABLE IF EXISTS questions'],
-            ['DROP TABLE IF EXISTS answers'],
             ['CREATE TABLE IF NOT EXISTS "participants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"name" TEXT,"email" TEXT,"phone" TEXT,"ranking" INTEGER,"created" TEXT)'],
             ['CREATE TABLE IF NOT EXISTS "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"question" TEXT,"difficulty" INTEGER,"correct_alternative" TEXT,"section" INTEGER)'],
             ['CREATE TABLE IF NOT EXISTS "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"question_id" INTEGER,"alternative" TEXT,"answer" TEXT,CONSTRAINT "fk_answers_questions_1" FOREIGN KEY ("question_id") REFERENCES "questions" ("id"))']
@@ -51,7 +49,7 @@ export class DatabaseProvider {
         db.executeSql('SELECT COUNT(id) as qtd FROM questions', {})
             .then((data: any) => {
                 //Se não existe nenhum registro
-                if (data.rows.item(0).qtd <= 10) {
+                if (data.rows.item(0).qtd <= 0) {
 
                     // Criando as tabelas
                     db.executeSql('insert into questions (id,question,difficulty,correct_alternative,section) values (?,?,?,?,?)', [1,'Em que ano a Cerveja Skol chegou ao Brasil?', '10', 'A', 1]);
@@ -70,7 +68,7 @@ export class DatabaseProvider {
                     db.executeSql('insert into answers (question_id,answer,alternative) values (?,?,?)', [3,'jovem, atual e careta','A']);
                     db.executeSql('insert into answers (question_id,answer,alternative) values (?,?,?)', [3,'tradicional, jovem e amarga','B']);
                     db.executeSql('insert into answers (question_id,answer,alternative) values (?,?,?)', [3,'conservadora, quadrada e amarga','C']);
-                    db.executeSql('insert into answers (question_id,answer,alternative) values (?,?,?)', [3,'conservadora, quadrada e amarga','D']);
+                    db.executeSql('insert into answers (question_id,answer,alternative) values (?,?,?)', [3,'redonda, inovadora e irreverente ','D']);
 
                     db.executeSql('insert into questions (id,question,difficulty,correct_alternative,section) values (?,?,?,?,?)', [4,'De onde vem o nome Skol?', '10', 'B', 1]);
                     db.executeSql('insert into answers (question_id,answer,alternative) values (?,?,?)', [4,'De onde vem o nome Skol?','A']);
@@ -192,7 +190,7 @@ export class DatabaseProvider {
                     db.executeSql('insert into answers (question_id,answer,alternative) values (?,?,?)', [23,' 1 ','C']);
                     db.executeSql('insert into answers (question_id,answer,alternative) values (?,?,?)', [23,'1011','D']);
 
-                    db.executeSql('insert into questions (id,question,difficulty,correct_alternative,section) values (?,?,?,?,?)', [24,'“O Araketu, o Araketu quando toca, deixa todo mundo”:', '5', 'C', 3]);
+                    db.executeSql('insert into questions (id,question,difficulty,correct_alternative,section) values (?,?,?,?,?)', [24,'“O Araketu, o Araketu quando toca, deixa todo mundo”:', '5', 'B', 3]);
                     db.executeSql('insert into answers (question_id,answer,alternative) values (?,?,?)', [24,'cantando a mesma nota','A']);
                     db.executeSql('insert into answers (question_id,answer,alternative) values (?,?,?)', [24,'pulando que nem pipoca ','B']);
                     db.executeSql('insert into answers (question_id,answer,alternative) values (?,?,?)', [24,'esquentando que nem pipoca','C']);
