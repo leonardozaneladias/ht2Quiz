@@ -37,7 +37,19 @@ export class QuestionsPage {
 
   questions: QuestionsProvider = new QuestionsProvider();
   history:Array<number>=[];
-  order: Array<{section: number,difficulty: number}> = [{section: 1, difficulty: 5},{section: 1, difficulty: 10},{section: 2, difficulty: 5},{section: 2, difficulty: 10},{section: 3, difficulty: 5},{section: 3, difficulty: 10},{section: 4, difficulty: 5},{section: 4, difficulty: 10},{section: 5, difficulty: 5},{section: 5, difficulty: 10}];
+  history_query:string = '';
+  order: Array<{section: number,difficulty: number}> = [
+          {section: 1, difficulty: 5},
+          {section: 1, difficulty: 10},
+          {section: 2, difficulty: 5},
+          {section: 2, difficulty: 10},
+          {section: 3, difficulty: 5},
+          {section: 3, difficulty: 10},
+          {section: 4, difficulty: 5},
+          {section: 4, difficulty: 10},
+          {section: 5, difficulty: 5},
+          {section: 5, difficulty: 10}
+      ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private db: DatabaseProvider, public questionsProvider: QuestionsProvider, public participantsProvider: ParticipantsProvider, private nativeAudio: NativeAudio) {
 
@@ -47,7 +59,30 @@ export class QuestionsPage {
 
   ionViewDidLoad() {
       this.sortQuestion(this.order[this.questnumber].section,this.order[this.questnumber].difficulty)
+      this.questnumber+=1;
   }
+
+    ionViewWillEnter(){
+      console.log('ionViewWillEnter')
+    }
+    ionViewDidEnter(){
+        console.log('ionViewDidEnter')
+    }
+    ionViewWillLeave(){
+        console.log('ionViewWillLeave')
+    }
+    ionViewDidLeave(){
+        console.log('ionViewDidLeave')
+    }
+    ionViewWillUnload(){
+        console.log('ionViewWillUnload')
+    }
+    ionViewCanEnter(){
+        console.log('ionViewCanEnter')
+    }
+    ionViewCanLeave(){
+        console.log('ionViewCanLeave')
+    }
 
   respost(resp:string){
 
@@ -56,7 +91,7 @@ export class QuestionsPage {
       }
       this.block = true;
 
-      if(this.questnumber >= 9){
+      if(this.questnumber >= 10){
           this.db.getDB()
               .then((db: SQLiteObject) => {
                   db.executeSql('UPDATE participants SET ranking = ? WHERE id = ?', [this.points, this.participantsProvider.id])
@@ -144,11 +179,12 @@ export class QuestionsPage {
   sortQuestion(section, difficulty){
       this.db.getDB()
           .then((db: SQLiteObject) => {
-              db.executeSql('SELECT * FROM questions WHERE section = ? AND difficulty = ? ORDER BY RANDOM() LIMIT 0,1', [section,difficulty])
+              db.executeSql('SELECT * FROM questions WHERE section = ? AND difficulty = ? AND id NOT IN (?) ORDER BY RANDOM() LIMIT 0,1', [section,difficulty,this.history_query])
                   .then((data: any) => {
 
                       this.questions.id = data.rows.item(0).id;
                       this.history.push(this.questions.id);
+                      this.history_query = this.history.join(',');
                       this.questions.question = data.rows.item(0).question;
                       this.questions.difficulty = data.rows.item(0).difficulty;
                       this.questions.correct_alternative = data.rows.item(0).correct_alternative;
