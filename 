@@ -1,0 +1,95 @@
+[33mcommit 6cee15254a9ec60c47d6d2f5c09b540644995440[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: leonardozaneladias <leonardozaneladias@gmail.com>
+Date:   Thu Feb 21 08:44:23 2019 -0300
+
+    Correction, do not repeat question.
+
+[33mcommit 18d74cf6869cde43516104028a6cc0d2ec57a800[m
+Author: leonardozaneladias <leonardozaneladias@gmail.com>
+Date:   Sat Feb 9 10:57:10 2019 -0200
+
+    finalizing adjustments
+
+[33mcommit 5ca5e98321ffeda63150a81215082e3132f73f3b[m
+Author: Leonardo Zanela <leonardozaneladias@gmail.com>
+Date:   Fri Feb 8 18:38:18 2019 -0200
+
+    generate resources
+
+[33mcommit 6be0b7629af212336cb40cba6b8b870d1d35a72d[m
+Author: leonardozaneladias <leonardozaneladias@gmail.com>
+Date:   Fri Feb 8 18:24:10 2019 -0200
+
+    ajust final one
+
+[33mcommit 10b0e74810d4771190013ab88e86abe340e05f48[m
+Author: leonardozaneladias <leonardozaneladias@gmail.com>
+Date:   Fri Feb 8 18:22:16 2019 -0200
+
+    final one
+
+[33mcommit ef241416407d1b1d3e51b6c07668f654d9b92914[m
+Author: leonardozaneladias <leonardozaneladias@gmail.com>
+Date:   Fri Feb 8 16:42:04 2019 -0200
+
+    layouts ok
+
+[33mcommit ccb174bc1b98342b53db879a73144ba80fa60acf[m
+Author: leonardozaneladias <leonardozaneladias@gmail.com>
+Date:   Fri Feb 8 06:21:33 2019 -0200
+
+    Almost finished
+
+[33mcommit 209cfae7407d55c1c3d9bc2b2462a8e09b38d9ad[m
+Author: leonardozaneladias <leonardozaneladias@gmail.com>
+Date:   Fri Feb 8 01:10:48 2019 -0200
+
+    start data ok
+
+[33mcommit aa1b65835575f6f0d1f6c1a38b55a11a7d0f67d4[m
+Author: leonardozaneladias <leonardozaneladias@gmail.com>
+Date:   Thu Feb 7 18:46:22 2019 -0200
+
+    commit!
+
+[33mcommit 95c8f26eea5a430303b933f2d3436a36a92e2ec7[m
+Author: leonardozaneladias <leonardozaneladias@gmail.com>
+Date:   Thu Feb 7 17:52:30 2019 -0200
+
+    page participants
+
+[33mcommit 0e7fd4cf8c896255b5c3aef1356acb7f73f76232[m
+Author: leonardozaneladias <leonardozaneladias@gmail.com>
+Date:   Thu Feb 7 17:33:13 2019 -0200
+
+    Home screen and image
+
+[33mcommit 35599ad609176556cb5c03bea4a7527daecb514e[m
+Author: leonardozaneladias <leonardozaneladias@gmail.com>
+Date:   Thu Feb 7 15:04:25 2019 -0200
+
+    alter texts
+
+[33mcommit bc622cbe76402045c5edf6923dcc29545fc0665b[m
+Author: leonardozaneladias <leonardozaneladias@gmail.com>
+Date:   Thu Feb 7 10:56:56 2019 -0200
+
+    ionic cordova run android
+
+[33mcommit d23a65f0926e70f930086eab44032142599a4b56[m
+Author: Leonardo Zanela <leonardozaneladias@gmail.com>
+Date:   Wed Feb 6 23:05:51 2019 -0200
+
+    cordova-sqlite install
+
+[33mcommit 595c926facb1868860d9608e2082460b985f8e8f[m
+Author: leonardozaneladias <leonardozaneladias@gmail.com>
+Date:   Wed Feb 6 22:59:39 2019 -0200
+
+    npm install
+
+[33mcommit 86d8a76b235bf4e7cdfced36355a4e2fb448b779[m
+Author: Leonardo Zanela <leonardozaneladias@gmail.com>
+Date:   Wed Feb 6 21:15:07 2019 -0200
+
+    Initial commit

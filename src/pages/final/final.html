@@ -12,8 +12,10 @@
 
 <ion-content padding class="myview">
 
-  <h3 text-center style="color: #000; font-size: 50px; margin-top: 420px;" *ngIf="!winner" >Você acertou {{participantsProvider.ranking}} de 10 perguntas</h3>
-  <h3 text-center style="color: #000; font-size: 30px; margin-top: 360px;" *ngIf="winner"><span style="font-size: 74px; color: #ED257D; font-weight: bold;">Parabéns!</span><br>Você acertou acertou 100% e irá curtir com um amigo(o) um dia de Carnaval em cima do Bloco Vou de Taxi com um Cooler cheinho de Skol!</h3>
+  <h3 text-center style="color: #000; font-size: 50px; margin-top: 400px;" *ngIf="!winner" >Você acertou {{participantsProvider.ranking}} de 10 perguntas</h3>
+  <h3 text-center style="color: #000; font-size: 30px; margin-top: 360px;text-transform: uppercase;" *ngIf="winner">
+    <span style="font-size: 74px; color: #ED257D; font-weight: bold;">Parabéns!</span><br>
+    Você acertou acertou 100% e irá curtir com um amigo(o) um dia de Carnaval em cima do Bloco Vou de Taxi com um Cooler cheinho de Skol!</h3>
 
   <button ion-button full (click)="reset()" style="padding: 50px; font-size: 50px; margin-top: 30px; background: #ED257D; border-radius: 15px;">Reiniciar QUIZ</button>
 </ion-content>
